@@ -51,7 +51,7 @@ const TaskList = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative h-5/6">
       <div className="relative flex justify-center z-20 p-4 h-20">
         <button
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
@@ -60,9 +60,12 @@ const TaskList = () => {
           Add Task
         </button>
       </div>
-      <div className="h-5/6 flex justify-center items-center border border-gray-300 rounded-md shadow-md p-4 bg-gray-50 overflow-x-hidden">
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 overflow-y-auto no-scrollbar" style={{ maxHeight:"80dvh" }}>
-          {tasks.map((task, index) => (
+      <div className="min-h-5/6 flex justify-center items-center border border-gray-300 rounded-md shadow-md p-4 bg-gray-50 overflow-x-hidden">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 overflow-y-auto no-scrollbar" style={{ maxHeight: "80dvh" }}>
+          {tasks && tasks.length === 0 ? 
+          <div className="min-h-40 flex justify-center items-center">
+                <h2>There is no task added yet. please enter your task.</h2>
+          </div> : tasks.map((task, index) => (
             <div key={index} className="border border-gray-300 rounded-md shadow-md p-5 hover:scale-105 transition-transform min-h-52 w-72" >
               <div className="border-b border-gray-300 min-h-40">{task}</div>
               <div className="flex justify-around mt-2">
