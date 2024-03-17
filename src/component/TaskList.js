@@ -66,8 +66,8 @@ const TaskList = () => {
           <div className="min-h-40 flex justify-center items-center">
                 <h2>There is no task added yet. please enter your task.</h2>
           </div> : tasks.map((task, index) => (
-            <div key={index} className="border border-gray-300 rounded-md shadow-md p-5 hover:scale-105 transition-transform min-h-52 w-72" >
-              <div className="border-b border-gray-300 min-h-40">{task}</div>
+            <div key={index} className="border border-gray-300 rounded-md shadow-md p-5 hover:scale-105 transition-transform min-h-44 w-52" >
+              <div className="border-b border-gray-300 min-h-36">{task}</div>
               <div className="flex justify-around mt-2">
                 <button className="text-blue-500 hover:text-blue-700" onClick={() => handleEditTask(index)}>
                   Edit
